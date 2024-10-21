@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Average Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./images/stackaveragecalc.ico">
+  <meta charset="UTF-8">
+  <meta name="description" content="A simple online calculator to calculate the average price of a stock or a portfolio of stocks." />
+  <meta name="keywords" content="Stock average calculator, Share average calculator, Stock market average calculator, Investment calculator, Financial calculator, Indian Stock market average Calculator, USA Stock Market average calculator, US stock market average calculator, Japan stock market average-calculator, Australia stock market average calculator. average calculator, stock calculator, percentage calculator, cash and carry calculator, Stock prices, Average, Calculation, Performance, Investors, Time period, Investment decisions, Spreadsheet, Software program, Stock charting, Technical analysis, Analyzing, Comparison, Investment performance, Stock market.">
+  <meta name="author" content="Avinash Kamthe">
+  <meta property="og:title" content="Stock Average Calculator" />
+  <meta property="og:url" content="https://avinashkamthe24.github.io/stockaveragecalculator/" />
+  <meta property="og:description" content="A simple online calculator to calculate the average price of a stock or a portfolio of stocks.">
+  <meta property="og:image" content="https://praveenmp.github.io/stockaveragecalculator/images/stackaveragecalc.png">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #purchase-table {
+      border-collapse: collapse; /* Ensures borders are not doubled */
+      border: 2px solid black; /* Outer border */
+      width: 100%; /* Optional: makes the table width 100% */
+    }
+
+    #purchase-table th, #purchase-table td {
+      border: none; /* No inner borders */
+      padding: 8px;
+      text-align: left; /* Align text to the left */
+    }
+
+    #purchase-table tr {
+      border-bottom: 1px dotted gray; /* Dotted line for each row */
+    }
+
+    /* Style for input boxes */
+    input[type="number"] {
+      width: 120px; /* Set a larger width */
+      height: 30px; /* Set a larger height */
+      font-size: 16px; /* Keep the text size the same */
+      padding: 4px; /* Optional: add some padding for better appearance */
+    }
+  </style>
+</head>
+<body>
+  <h1>Stock Average Calculator</h1>
+  <div class="container">
+    <table id="purchase-table">
+      <thead>
+        <tr>
+          <th>Purchase</th>
+          <th>Quantity</th>
+          <th>Price per Share</th>
+          <th>Amount Invested</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="purchase-body">
+        <tr>
+          <td>Trade 1</td>
+          <td><input type="number" id="quantity-1" value="0"></td>
+          <td><input type="number" id="price-1" value="0"></td>
+          <td id="amount-invested-1" style="color: grey;">0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Trade 2</td>
+          <td><input type="number" id="quantity-2" value="0"></td>
+          <td><input type="number" id="price-2" value="0"></td>
+          <td id="amount-invested-2" style="color: grey;">0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="add-purchase"><strong>Add Purchase</strong></button>
+    <button id="calculate"><strong>Calculate</strong></button>
+    <button id="reset"><strong>Reset</strong></button>
+    <div id="output">
+      <p>Total Quantity: <span id="total-quantity" style="font-weight: bold;">0</span></p>
+      <p>Total Amount Invested: <span id="total-amount-invested" style="font-weight: bold;">0</span></p>
+      <p>Average Price: <span id="average-price" style="font-weight: bold;">0</span></p>
+    </div>
+  </div>
+  <div class="container">
+    <h3>Stock Average Calculator</h3>
+    <h4>What is a Stock Average Calculator?</h4>
+    <p>A Stock Average Calculator is a financial tool used to calculate the average price of a stock or a portfolio of stocks. It helps investors to determine the average cost of their investments, which is essential for making informed decisions about buying and selling stocks.</p>
+    <h4>How does a Stock Average Calculator work?</h4>
+    <p>A Stock Average Calculator works by taking into account the total amount invested in a stock or a portfolio of stocks, the number of shares purchased, and the price at which they were purchased. The calculator then calculates the average price of the stock or portfolio, which is the total amount invested divided by the number of shares.</p>
+    <h4>How to use a Stock Average Calculator?</h4>
+    <p>Using a Stock Average Calculator is straightforward. Here are the steps:</p>
+    <ul>
+      <li>Enter the number of shares purchased</li>
+      <li>Enter the price at which the shares were purchased</li>
+      <li>Click the "Calculate" button to get the average price</li>
+    </ul>
+    <h4>Example:</h4>
+    <p>Let's say you purchased 100 shares of XYZ stock at 50 per share, and then purchased another 200 shares at 60 per share. To calculate the average price of your investment, you would:</p>
+    <ul>
+      <li>Enter 100 (total number of shares) in the first "Number of Shares" field</li>
+      <li>Enter 50 "Price" fields</li>
+      <li>Enter 200 (total number of shares) in the second "Number of Shares" field</li>
+      <li>Enter 60 "Price" fields</li>
+      <li>Click the "Calculate" button to get the average price</li>
+    </ul>
+    <p>The calculator would then display the average price of your investment, which in this case would be 56.66 per share.</p>
+    <h3>FAQ:</h3>
+    <ul>
+      <li>
+        <strong>Q: What is the purpose of a Stock Average Calculator?</strong>
+        <p>A: The purpose of a Stock Average Calculator is to help investors determine the average price of their investments, which is essential for making informed decisions about buying and selling stocks.</p>
+      </li>
+      <li>
+        <strong>Q: How do I use a Stock Average Calculator?</strong>
+        <p>A: To use a Stock Average Calculator, simply enter the number of shares purchased, the price at which they were purchased and click the "Calculate" button.</p>
+      </li>
+      <li>
+        <strong>Q: What is the formula for calculating the average price of a stock?</strong>
+        <p>A: The formula for calculating the average price of a stock is: Average Price = Total Amount Invested / Number of Shares.</p>
+      </li>
+      <li>
+        <strong>Q: Can I use a Stock Average Calculator for multiple stocks?</strong>
+        <p>A: No, you cannot use a Stock Average Calculator for multiple stocks. If you need to calculate the average price of multiple stocks, you will need to use a different calculation.</p>
+      </li>
+      <li>
+        <strong>Q: Is a Stock Average Calculator accurate?</strong>
+        <p>A: Yes, a Stock Average Calculator is accurate as long as you enter the correct information. However, it's always a good idea to double-check your calculations to ensure accuracy.</p>
+      </li>
+      <li>
+        <strong>Q: Can I use a Stock Average Calculator for other types of investments?</strong>
+        <p>A: No, a Stock Average Calculator is specifically designed for calculating the average price of stocks. If you need to calculate the average price of other types of investments, such as bonds or mutual funds, you will need to use a different calculator.</p>
+      </li>
+    </ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

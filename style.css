@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light background for cleaner look */
+  color: #333; /* Dark text for readability */
+}
+
+.container {
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff; /* White background for the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h1 {
+  color: #007bff; /* Blue accent color for heading */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #dee2e6; /* Light border for cells */
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff; /* Blue background for headers */
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa; /* Light grey background for even rows */
+}
+
+tr:nth-child(odd) {
+  background-color: #e9ecef; /* Slightly darker grey for odd rows */
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#reset {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+#reset:hover {
+  background-color: #e6ae06;
+}
+
+#calculate {
+  background-color: #28a745;
+  color: #fff;
+}
+
+#calculate:hover {
+  background-color: #218838;
+}
+
+#add-purchase {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+#add-purchase:hover {
+  background-color: #138496;
+}
+
+.delete-row {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.delete-row:hover {
+  background-color: #c82333;
+}
+
+/* Output text styling */
+#output span {
+  font-weight: bold;
+  color: #007bff; /* Blue color for outputs */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+#purchase-body td:nth-child(4) {
+  color: grey;
+}
