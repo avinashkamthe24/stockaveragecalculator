@@ -1,87 +1,131 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Stock Average Calculator</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="./images/stackaveragecalc.ico">
-  <meta charset="UTF-8">
-  <meta name="description" content="A simple online calculator to calculate the average price of a stock or a portfolio of stocks." />
-  <meta name="keywords" content="Stock average calculator, Share average calculator, Stock market average calculator, average calculator stock, average calculator, average price calculator, average share price calculator, Investment calculator, Financial calculator, Indian Stock market average Calculator, USA Stock Market average calculator, US stock market average calculator, Japan stock market average-calculator, Australia stock market average calculator. average calculator, stock calculator, percentage calculator, cash and carry calculator, Stock prices, Average, Calculation, Performance, Investors, Time period, Investment decisions, Spreadsheet, Software program, Stock charting, Technical analysis, Analyzing, Comparison, Investment performance, Stock market.">
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Stock Average Calculator</title>
+    <link rel="icon" type="image/x-icon" href="./images/stackaveragecalc.ico">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A simple online calculator to calculate the average price of a stock or a portfolio of stocks." />
+  <meta name="keywords" content="Stock average calculator, Share average calculator, Stock market average calculator, Investment calculator, Financial calculator, Indian Stock market average Calculator, USA Stock Market average calculator, US stock market average calculator, Japan stock market average-calculator, Australia stock market average calculator. average calculator, stock calculator, percentage calculator, cash and carry calculator, Stock prices, Average, Calculation, Performance, Investors, Time period, Investment decisions, Spreadsheet, Software program, Stock charting, Technical analysis, Analyzing, Comparison, Investment performance, Stock market.">
   <meta name="author" content="Avinash Kamthe">
   <meta property="og:title" content="Stock Average Calculator" />
   <meta property="og:url" content="https://avinashkamthe24.github.io/stockaveragecalculator/" />
   <meta property="og:description" content="A simple online calculator to calculate the average price of a stock or a portfolio of stocks.">
   <meta property="og:image" content="https://avinashkamthe24.github.io/stockaveragecalculator/images/stackaveragecalc.png">
   <meta property="og:type" content="website">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="CckhU61Fq2R5_qANti3w9XC-OhHqBevXXdedE3k1ZEY" />
-  <style>
-    #purchase-table {
-      border-collapse: collapse; /* Ensures borders are not doubled */
-      border: 2px solid black; /* Outer border */
-      width: 100%; /* Optional: makes the table width 100% */
-    }
-
-    #purchase-table th, #purchase-table td {
-      border: none; /* No inner borders */
-      padding: 8px;
-      text-align: left; /* Align text to the left */
-    }
-
-    #purchase-table tr {
-      border-bottom: 1px dotted gray; /* Dotted line for each row */
-    }
-
-    /* Style for input boxes */
-    input[type="number"] {
-      width: 120px; /* Set a larger width */
-      height: 30px; /* Set a larger height */
-      font-size: 16px; /* Keep the text size the same */
-      padding: 4px; /* Optional: add some padding for better appearance */
-    }
-  </style>
-</head>
-<body>
-  <h1>Stock Average Calculator</h1>
-  <div class="container">
-    <table id="purchase-table">
-      <thead>
-        <tr>
-          <th>Purchase</th>
-          <th>Quantity</th>
-          <th>Price per Share</th>
-          <th>Amount Invested</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="purchase-body">
-        <tr>
-          <td>Trade 1</td>
-          <td><input type="number" id="quantity-1" value="0"></td>
-          <td><input type="number" id="price-1" value="0"></td>
-          <td id="amount-invested-1" style="color: grey;">0</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Trade 2</td>
-          <td><input type="number" id="quantity-2" value="0"></td>
-          <td><input type="number" id="price-2" value="0"></td>
-          <td id="amount-invested-2" style="color: grey;">0</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    <button id="add-purchase"><strong>Add Purchase</strong></button>
-    <button id="calculate"><strong>Calculate</strong></button>
-    <button id="reset"><strong>Reset</strong></button>
-    <div id="output">
-      <p>Total Quantity: <span id="total-quantity" style="font-weight: bold;">0</span></p>
-      <p>Total Amount Invested: <span id="total-amount-invested" style="font-weight: bold;">0</span></p>
-      <p>Average Price: <span id="average-price" style="font-weight: bold;">0</span></p>
-    </div>
-  </div>
-  <div class="container">
-    <h3>Stock Average Calculator</h3>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="row">
+        <div class="col-12  text-center">
+          <h1>Stock Average Calculator</h1>
+        </div>
+      </div>
+      <div class="trade-group">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <strong>Trade 1</strong>
+            
+            
+          </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+          <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Quantity</span>
+              </div>
+              <input type="text" id="quantity-1" value="0" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Price</span>
+              </div>
+              <input type="text" id="price-1" value="0" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="trade-group">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <strong>Trade 2</strong>
+            
+            
+          </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+          <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Quantity</span>
+              </div>
+              <input type="text" id="quantity-2" value="0" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-lg-4 col-xl-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Price</span>
+              </div>
+              <input type="text" id="price-2" value="0" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-right">
+          <button id="add-purchase" class="btn btn-outline-info p-2">
+            <i class="fas fa-plus"></i> Add Purchase
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12 d-flex justify-content-start">
+          <button id="calculate" class="btn btn-primary mr-2">Calculate</button>
+          <button id="reset" class="btn btn-danger">Reset</button>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="output-container">
+                <div class="output-label">
+                  <span class="font-weight-bold">Total Quantity:</span>
+                  <span id="total-quantity" class="font-weight-bold">0</span>
+                </div>
+                <div class="output-label">
+                  <span class="font-weight-bold">Total Amount Invested:</span>
+                  <span id="total-invested" class="font-weight-bold">0</span>
+                </div>
+                <div class="output-label">
+                  <span class="font-weight-bold">Average Price:</span>
+                  <span id="average-price" class="font-weight-bold">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     <div class="main-container">
+      <div class="row">
+        <div class="col-12">
+          <h3>Stock Average Calculator</h3>
     <h4>What is a Stock Average Calculator?</h4>
     <p>A Stock Average Calculator is a financial tool used to calculate the average price of a stock or a portfolio of stocks. It helps investors to determine the average cost of their investments, which is essential for making informed decisions about buying and selling stocks.</p>
     <h4>How does a Stock Average Calculator work?</h4>
@@ -130,7 +174,14 @@
         <p>A: No, a Stock Average Calculator is specifically designed for calculating the average price of stocks. If you need to calculate the average price of other types of investments, such as bonds or mutual funds, you will need to use a different calculator.</p>
       </li>
     </ul>
-  </div>
-  <script src="script.js"></script>
-</body>
+        </div>
+      </div>
+     </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
