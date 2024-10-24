@@ -8,12 +8,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .input-group-text{
-  width: 70px;
+  width: 35px;
   font-size: small;
   font-weight: bold;
   text-align: right;
-  padding-left: 8px;
-}
+  }
 .trade-group {
   border: 1px solid #ccc;
   padding: 20px;
